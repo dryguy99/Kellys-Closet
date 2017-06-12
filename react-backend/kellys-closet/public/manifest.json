@@ -1,11 +1,11 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Kelly's Closet",
+  "name": "Kelly's Closet",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "192x192",
-      "type": "image/png"
+      "sizes": "256x256",
+      "type": "image/jpeg"
     }
   ],
   "start_url": "./index.html",
