@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.17.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "method-override": "^2.3.9",
+    "mongoose": "^4.10.5",
+    "morgan": "^1.8.2",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4"
+  },
+  "name": "oauth-mongoose",
+  "version": "1.0.0",
+  "description": "secure login with email and social media",
+  "main": "server.js",
+  "repository": "https://github.com/dryguy99/oauth-mongoose.git",
+  "author": "Timothy Dry <timothy.dry@verizon.net>",
+  "license": "MIT",
+  "engines": {
+    "node": "8.0.0"
+  }
+}
