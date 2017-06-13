@@ -4,7 +4,7 @@ Pick out your outfit before you go to the closet
 ## DIRECTIONS
 There are currently 3 server files in this repo.  They need to be combined.
 #### Please note:
-I am using yarn instead of npm, so you may see files you don't recognize.  npm will still work, but you also have the option of using yarn which runs faster once its installed and there are a few syntax differences.  If you are interested please check it out at https://yarnpkg.com/en/ 
+I am using yarn instead of npm, so you may see files you don't recognize.  npm will still work, but you also have the option of using yarn. WHY? Yarn runs faster once its installed and has less overhead, but be aware there are a few syntax differences.  If you are interested please check it out at https://yarnpkg.com/en/ 
 
 ### USER Authentication
 In the myOauth folder:
