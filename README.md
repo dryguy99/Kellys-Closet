@@ -11,7 +11,7 @@ In the myOauth folder:
  then open a new terminal and run mongod so the MongoDB is running.
  To see it in action use
  
-   node server
+    node server
    
  to start the server.
  
@@ -29,11 +29,11 @@ In the myOauth folder:
  In the react-backend folder I created a server for a REST API.  it currently just runs a user route and is not hooked up to ay database.
  Prior to your first run of this server, please run
  
-  npm install
+   npm install
   
  This server must be started before the react-app.  To start theis server enter the following:
  
- PORT=3001 node bin/www
+   PORT=3001 node bin/www
  
  This server will then start on port 3001.
  
@@ -41,12 +41,12 @@ In the myOauth folder:
  
  I used create-react-app to set this up.  Prior to your first run go to react-backend/kellys-closet and run
  
-  npm install.
+   npm install.
  
  Before you start this app, ensure the react backend server is running in a seperate window.
  To start this app, from the react-backend/kellys-closet folder run
   
-  npm start
+   npm start
   
 if it asks for a new port say Y.
  
