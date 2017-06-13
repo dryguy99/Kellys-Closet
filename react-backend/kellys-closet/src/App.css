@@ -1,0 +1,49 @@
+.App {
+
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 10s linear;
+  height: 15vw;
+  text-align: left;
+  float: left;
+  margin: 1vw 0vw 0vw 3.5vw;
+  border-radius: 2vw;
+}
+
+.App-header {
+  background-color: #4d0099;
+  height: 15.2vw;
+  padding: 1vw;
+  color: white;
+}
+.title {
+  margin-left: 18vw;
+  font-size: 5vw;
+  fontWeight: 700;
+}
+.Main {
+  margin: 0vw;
+  background: url('./graphicbackground.jpg');
+  text-align: center;
+  opacity: 0.1;
+  height: 100vw;
+  position: absolute;
+  top: 17vw;
+  width: 100vw;
+}
+.App-content {
+  opacity: 1.0;
+  text-align: center;
+  color: #6600cc;
+}
+.App-intro {
+  font-size: large;
+  opacity: 1.0;
+  color: #6600cc;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
