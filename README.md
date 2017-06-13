@@ -39,7 +39,7 @@ In the myOauth folder:
  
  This server will then start on port 3001.
  
- ### Kellys CLoset React App
+ ### Kellys Closet React App
  
  I used create-react-app to set this up.  Prior to your first run go to react-backend/kellys-closet and run
  
