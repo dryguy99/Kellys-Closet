@@ -26,6 +26,20 @@ In the myOauth folder:
     
  once logged in you may connect the accounts.  All password data is hashed with bcrypt for security and all accounts are saved to MongoDB.
  
+ ### get-pics
+ 
+ In this folder you may upload pics and display them to the screen.
+ to use go to the get-pics folder in your command line and execute the folllowing:
+ 
+    npm install    or yarn
+    mkdir uploads output
+    
+    in a seperate window run mongod if it is not already working
+    
+    node server.js    or nodemon server
+    
+ This will allow you to use and test this part of the app.
+ 
  ### REACT-Backend
  
  In the react-backend folder I created a server for a REST API.  it currently just runs a user route and is not hooked up to ay database.
