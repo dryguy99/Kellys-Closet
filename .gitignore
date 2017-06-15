@@ -2,3 +2,5 @@
 /react-backend/kellys-closet/node_modules
 /myOauth/node_modules
 /get-pics/node_modules
+/get-pics/uploads/*
+/get-pics/output/*

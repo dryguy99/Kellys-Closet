@@ -7,6 +7,7 @@ var fs = require("fs");
 var ImageArray=[];
 var myfiles=[];
 var base64data;
+var sharp = require('sharp');
 
 
 module.exports=function(app){
@@ -22,7 +23,23 @@ module.exports=function(app){
             res.json('error: there was an error');
             }
             else{
-           console.log(doc);
+              console.log(doc);
+           var mimeType = doc.mimetype;
+              var result = mimeType.split("/")
+              var type = result[1];
+              var fileName = "./uploads/" + doc.filename;
+              console.log("Filename with dir: " + fileName);
+              var outputFilename = "./output/" + doc.filename + ".jpeg";
+              console.log(outputFilename);
+              sharp(fileName)
+                .resize(300, 300)
+                .jpeg()
+                .min()
+                .toFile(outputFilename, function(err) {
+                  // output.jpg is a 300 pixels wide and 200 pixels high image
+                  // containing a scaled and cropped version of input.jpg
+                  console.log(err);
+                });
             }
        })
        res.redirect('/');
@@ -48,7 +65,8 @@ app.get("/one",function(req,res){
 app.get("/uploads/:id",function(req,res){
        console.log("REQ " + req.params.id)
    //fs.readFile("./uploads\\"+req.params.id, function(err, imageData){
-    fs.readFile("./uploads/"+req.params.id, function(err, imageData){
+   console.log("id: " + req.params.id);
+    fs.readFile("./output/"+req.params.id + ".jpeg", function(err, imageData){
             //console.log(imageData)
         if(err){
           console.log(err+ "ERRRRRRRR");
@@ -58,7 +76,6 @@ app.get("/uploads/:id",function(req,res){
           //res.setContentType('image/jpeg');
           //res.set('Content-Type','image/jpeg');
           res.set({'Content-Type':'image/jpeg'});
-          //res.set('Content-Type', type);
           res.send(base64data);
 
           //base64Img.img('data:image/png;base64,...', 'dest', '1', function(err, filepath) {

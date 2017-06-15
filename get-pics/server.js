@@ -14,9 +14,10 @@ mongoose.connect("mongodb://localhost/img");
 //app.use(express.bodyParser({uploadDir:'./uploads'}));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static("./public"));
+app.use(express.static("./output"));
 
 var db= mongoose.connection;
-  
+
   db.on("error", function(error){
   console.log("Mongoose Error",error)
   });
@@ -30,4 +31,3 @@ require("./routes/images.js")(app);
 app.listen(3000, function() {
   console.log("App running on port "+ PORT);
 });
-

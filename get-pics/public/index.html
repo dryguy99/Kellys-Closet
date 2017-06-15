@@ -95,6 +95,7 @@ $(document).on("click", "#snap", function() {
 
 
 $(document).on("click", "#submit", function() {
+
     $.ajax({
         method: "GET",
         url: "/one/"
@@ -104,7 +105,7 @@ $(document).on("click", "#submit", function() {
                 method: "GET",
                 url: "/uploads/" + data[i].filename
               }).done(function(imgData) {
-                $("#img").append('<img style="width:10vw; height:10vw; margin:1vw;" src="data:image/jpeg;base64,'+ imgData + '"/>');
+                $("#img").append('<img style="width:10vw; height:10vw; margin:1vw;" src="data:image/jpeg;base64,'+imgData + '"/>');
               })
            }
        })
