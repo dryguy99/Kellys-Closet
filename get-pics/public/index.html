@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>upload</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+ <!--  <script src="home.js"></script> -->
+</head>
+<body>
+  <form action="/" method="POST" enctype="multipart/form-data">
+    <input type="file" name="avatar" enctype="multipart/form-data">
+    <input type="submit" value="upload" id="file">
+  </form>
+
+  <br><br>
+    <button type="submit" value="upload" id="submit">button</button>
+
+ <!--    <button id="snap">All Photos</button> -->
+    <div id="img"></div>
+
+
+
+<!-- <video id="video" width="640" height="480" autoplay  type="file" enctype="multipart/form-data"></video>
+<button id="snap">Snap Photo</button>
+<canvas id="canvas" width="640" height="480"></canvas>
+ -->
+
+
+</body>
+
+
+
+<script>
+var img;
+var file;
+var reader;
+
+// $("input").change(function(e) {
+//     for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
+//         console.log(e)
+//          file = e.originalEvent.srcElement.files[i];
+
+//          img = document.createElement("img");
+//          reader = new FileReader();
+//          console.log(reader)
+//         // reader.onloadend = function() {
+//         //      img.src = reader.result;
+//         // }
+//         reader.readAsDataURL(file);
+//         $("input").after(img);
+//     }
+// });
+
+// var x = [];
+// var img;
+// var file;
+// var reader;
+
+// $("input").change(function(e) {
+//  file= e.originalEvent.srcElement.files;
+//   x.push(file)
+//   //console.log(x)
+// })
+
+
+$(document).on("click", "#snap", function() {
+
+
+})
+// var img;
+// var file;
+// var reader;
+//     for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
+
+//          file = e.originalEvent.srcElement.files[i];
+//          console.log(file)
+
+//          img = document.createElement("img");
+//         reader = new FileReader();
+//        // console.log(reader)
+//         reader.onloadend = function() {
+//              img.src = reader.result;
+//              console.log(img.src)
+//                      }
+//         reader.readAsDataURL(file);
+//         $("input").after(img);
+    // }
+
+
+
+
+
+
+
+
+$(document).on("click", "#submit", function() {
+    $.ajax({
+        method: "GET",
+        url: "/one/"
+      }).done(function(data) {
+            for(i=0;i<data.length;i++){
+              $.ajax({
+                method: "GET",
+                url: "/uploads/" + data[i].filename
+              }).done(function(imgData) {
+                $("#img").append('<img style="width:10vw; height:10vw; margin:1vw;" src="data:image/jpeg;base64,'+ imgData + '"/>');
+              })
+           }
+       })
+    })
+           //  for(i=0;i<data.length;i++){
+           //    $("#img").append('<img src="/uploads/'+ data[i].filename + '"/>');
+           // }
+
+
+
+      //$( "#img" ).attr( "src", data[i].filename);
+   // $("#img").append('<img src="data:image/png;base64, ' + data[i].path + '" />');
+     //$("#img").append('<img src="./uploads\\'+data[i].filename'"/>');
+    //$("#img").append('<img src=".uploads\\'+ data[i].filename + '"/>');
+
+//$("#img").append('<img src="/uploads\\'+ data[i].filename + '"/>');
+
+
+
+
+// var array=[];
+// var video = document.getElementById('video');
+// var canvas = document.getElementById('canvas');
+// var context = canvas.getContext('2d');
+
+// // Get access to the camera!
+// if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+//     // Not adding `{ audio: true }` since we only want video now
+//     navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+//       console.log(stream)
+//         video.src = window.URL.createObjectURL(stream);
+//         console.log(video.src)
+//         video.play();
+//         console.log(video.play)
+//     });
+// }
+// //capyure
+// document.getElementById("snap").addEventListener("click", function() {
+//  var s = context;
+// context.drawImage(video, 0, 0, 640, 480);
+// array.push(s)
+// console.log(s)
+// console.log(array.length)
+// });
+
+
+</script>
+</html>
