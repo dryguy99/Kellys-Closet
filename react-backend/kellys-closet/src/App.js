@@ -1,40 +1,46 @@
 import React, { Component } from 'react';
 import logo from './LTSlogo.jpg';
 import './App.css';
+// import Button from 'react-bootstrap/lib/Button';
+import Login from './Login.js';
 
 class App extends Component {
-  state = {users: []}
 
- componentDidMount() {
-   fetch('/login')
-     .then(res => res.json())
-     .then(users => this.setState({ users }));
- }
 
   render() {
     return (
-      <div className="App">
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2 className="title">Welcome to Kelly's Closet!</h2>
+      <container className="fluid">
+        <div className="Main">
+        </div>
+        <div className="row">
+          <div className="col-12-sm col-md-12 col-lg-12">
+            <div className="App">
+                <div className="App-header">
+                  <img src={logo} className="App-logo" alt="logo" />
+                  <h2 className="title">Welcome to Kelly's Closet!</h2>
+                </div>
+            </div>
+            <h2 className="title-heading">My Closet</h2>
           </div>
-          <div className="Main">
-          </div>
-          <div className="App-content">
-              <p className="App-intro">
-                To get started, edit <code>src/App.js</code> and save to reload.
-              </p>
+        </div>
+        <Login/>
+
+        <div className="row">
+          <div className="col-12-sm col-md-12 col-lg-12 text-center">
+
+                <div className="App-content">
+                    <p className="App-intro">
+
+                    </p>
+
+                    <div>
 
 
-              <div>
-                <h1>Users</h1>
-                {this.state.users.map(user =>
-                  <div key={user.id}>{user.username}</div>
-                )}
-              </div>
+                    </div>
+                </div>
+            </div>
           </div>
-
-      </div>
+    </container>
     );
   }
 }

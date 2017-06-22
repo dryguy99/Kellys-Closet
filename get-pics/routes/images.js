@@ -33,6 +33,7 @@ module.exports=function(app){
               console.log(outputFilename);
               sharp(fileName)
                 .resize(300, 300)
+                .crop(sharp.strategy.centre)
                 .jpeg()
                 .min()
                 .toFile(outputFilename, function(err) {
